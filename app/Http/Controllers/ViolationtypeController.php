@@ -44,23 +44,16 @@ class ViolationtypeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        $violationtypes = Violationtype::find($id);
-        return view('screens.editviolation')->with('violationtypes', $violationtypes);
-    }
-
-    /**
      * Update the specified resource in storage.
      */
+
+
     public function update(Request $request, string $id)
     {
         $violationtypes = Violationtype::find($id);
         $input = $request->all();
         $violationtypes->update($input);
-        return redirect('vtypes')->with('flash_message', 'violationtype Updated!');  
+        return redirect('vtypes')->with('flash_message', 'violationtype Updated!');
     }
 
     /**
@@ -69,6 +62,6 @@ class ViolationtypeController extends Controller
     public function destroy($id)
     {
         Violationtype::destroy($id);
-        return redirect('vtypes')->with('flash_message', 'violationtype deleted!'); 
+        return redirect('vtypes')->with('flash_message', 'violationtype deleted!');
     }
 }

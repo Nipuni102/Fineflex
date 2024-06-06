@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Violationtype;
 use Illuminate\Http\Request;
 
 class DashController extends Controller
@@ -51,10 +52,11 @@ class DashController extends Controller
         return view (view:'screens.addnewviolation');
     }
 
-    public function editvlnview(){
-        return view (view:'screens.editviolation');
+    public function editvlnview($id){
+        $violationtypes = Violationtype::findOrFail($id);
+        return view('screens.editviolation', compact('violationtypes'));
     }
-   
+
     public function addnewplsview(){
         return view (view:'screens.addnewpolicestation');
     }
@@ -62,5 +64,5 @@ class DashController extends Controller
     public function editplsview(){
         return view (view:'screens.editpolice');
     }
-    
+
 }

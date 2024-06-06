@@ -35,11 +35,13 @@ Route::get('/addnewvln', [App\Http\Controllers\DashController::class, 'addnewvln
 Route::get('/addnewpls', [App\Http\Controllers\DashController::class, 'addnewplsview'])->name(name: 'addnewpls');
 
 Route::get('/editpls', [App\Http\Controllers\DashController::class, 'editplsview'])->name(name: 'editpls');
-Route::get('/editvln', [App\Http\Controllers\DashController::class, 'editvlnview'])->name(name: 'editvln');
+Route::get('/editvln/{id}', [App\Http\Controllers\DashController::class, 'editvlnview'])->name('editvln');
+
 
 Route::resource("/vtypes", ViolationtypeController::class);
 Route::post('/vtypesstore', [App\Http\Controllers\ViolationtypeController::class, 'store'])->name(name: 'vtypesstore');
 Route::delete('/vtypesdelete/{id}', [App\Http\Controllers\ViolationtypeController::class, 'destroy'])->name(name: 'vtypesdelete');
 Route::put('/vtypesupdate/{id}', [App\Http\Controllers\ViolationtypeController::class, 'update'])->name(name: 'vtypesupdate');
+
 
 require __DIR__.'/auth.php';

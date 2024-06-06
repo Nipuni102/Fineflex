@@ -237,7 +237,7 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <div class="dropdown-divider"></div>
-                                   
+
                                     <a class="dropdown-item" href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -266,15 +266,17 @@
                             <h6 class="m-0 font-weight-bold text-primary">Edit Violation Type</h6>
                         </div>
                         <div class="card-body">
-                            <form action="{{ url('vtypes/' .$violationtypes->id) }}" >
+                                <form action="{{ route('vtypesupdate' , ['id' => $violationtypes->id]) }}" method="POST">
+                                @csrf
+                                @method('PUT')
                                 <div class="form-group">
-                                    <label for="violation_type_name">Violation Type Name</label>
-                                    <input type="text" class="form-control" id="violation_type_name" placeholder="Enter violation type name">
+                                    <label for="violation_name">Violation Type Name</label>
+                                    <input type="text" class="form-control" name="violation_name" id="violation_name" placeholder="Enter violation type name">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="fine_amount">Fine Amount</label>
-                                    <input type="number" class="form-control" id="fine_amount" placeholder="Enter fine amount">
+                                    <input type="number" class="form-control" name="fine_amount" id="fine_amount" placeholder="Enter fine amount">
                                 </div>
                                 <button type="submit"  class="btn btn-primary">Update</button>
                             </form>
@@ -336,7 +338,7 @@
 
         <!-- Custom scripts for all pages-->
         <script src="js/sb-admin-2.min.js"></script>
-
+    </div>
 </body>
 
 </html>

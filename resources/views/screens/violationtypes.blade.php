@@ -288,9 +288,9 @@
 
                                             <td>
 
-                                                <a href="{{route('vtypesupdate', $item->id) }}" title="Edit "><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                                <a href="{{ route('editvln', $item->id) }}" title="Edit "><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
-                                        
+
                                                 <form action="{{ route('vtypesdelete', $item->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this?');">
                                                     @csrf
                                                     @method('DELETE')
@@ -558,7 +558,7 @@
 
         <!-- Custom scripts for all pages-->
         <script src="js/sb-admin-2.min.js"></script>
-
+    </div>
 </body>
 
 </html>
