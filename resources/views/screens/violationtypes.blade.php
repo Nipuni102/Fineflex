@@ -287,15 +287,16 @@
 
 
                                             <td>
-
-                                                <a href="{{ route('editvln', $item->id) }}" title="Edit "><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <div class="d-flex align-items-center">
+                                                <a href="{{ route('editvln', $item->id) }}" title="Edit "><button class="btn btn-success btn-sm btn-icon-text mr-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
 
                                                 <form action="{{ route('vtypesdelete', $item->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this?');">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm btn-icon-text">Delete </button>
                                                 </form>
+                                                </div>
                                             </td>
                                         </tr>
                                         @endforeach
