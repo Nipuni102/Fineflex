@@ -288,6 +288,7 @@
                                             <th>Police ID</th>
                                             <th>Name</th>
                                             <th>Mobile Number</th>
+                                            <th>Email</th>
                                             <th>Sign-Up Request</th>
                                         </tr>
                                     </thead>
@@ -297,7 +298,8 @@
                                             <td>00001</td>
                                             <td>120300</td>
                                             <td>W.P.Thushara Perera</td>
-                                            <td>077-5875125</td>                                         
+                                            <td>077-5875125</td> 
+                                            <td>tushara@gmail.com</td>                                          
                                             <td>
                                             <div class="d-flex align-items-center">
                             <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
@@ -315,7 +317,8 @@
                                             <td>00002</td>
                                             <td>120298</td>
                                             <td>M.A.Upul Nishantha</td>         
-                                            <td>071-4565795</td>                                   
+                                            <td>071-4565795</td>
+                                            <td>upul@gmail.com</td>                                   
                                             <td>
                                             <div class="d-flex align-items-center">
                             <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
@@ -334,6 +337,7 @@
                                             <td>120309</td>
                                             <td>W.A.Nimal Gunathilaka</td>
                                             <td>077-1265978</td>
+                                            <td>nimal@gmail.com</td>
                                              <td>
                                             <div class="d-flex align-items-center">
                             <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
@@ -352,6 +356,7 @@
                                             <td>119295</td>
                                             <td>K.Piyal Gamage</td>
                                             <td>071-6575915</td>
+                                            <td>piyal@gmail.com</td>
                                             <td>
                                             <div class="d-flex align-items-center">
                             <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
@@ -371,6 +376,7 @@
                                             <td>120620</td>
                                             <td>W.D.Kumara Navod</td>
                                             <td>077-5045735</td>
+                                            <td>kumara@gmail.com</td>
                                         <td>
                                             <div class="d-flex align-items-center">
                             <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">

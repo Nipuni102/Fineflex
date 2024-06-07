@@ -306,10 +306,7 @@
                               View
                               <i class="typcn typcn-edit btn-icon-append"></i>                          
                             </button>
-                            <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                              Delete
-                              <i class="typcn typcn-delete-outline btn-icon-append"></i>                          
-                            </button>
+                            
                           </div>
                                              </td>
                                         </tr>
@@ -325,10 +322,7 @@
                               View
                               <i class="typcn typcn-edit btn-icon-append"></i>                          
                             </button>
-                            <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                              Delete
-                              <i class="typcn typcn-delete-outline btn-icon-append"></i>                          
-                            </button>
+                           
                           </div>
                                             </td>
                                         </tr>
@@ -344,10 +338,7 @@
                               View
                               <i class="typcn typcn-edit btn-icon-append"></i>                          
                             </button>
-                            <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                              Delete
-                              <i class="typcn typcn-delete-outline btn-icon-append"></i>                          
-                            </button>
+                            
                           </div>
                                             </td>
                                         </tr>
@@ -363,10 +354,7 @@
                               View
                               <i class="typcn typcn-edit btn-icon-append"></i>                          
                             </button>
-                            <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                              Delete
-                              <i class="typcn typcn-delete-outline btn-icon-append"></i>                          
-                            </button>
+                           
                           </div>
                                             </td>
                                         </tr>
@@ -383,10 +371,7 @@
                               View
                               <i class="typcn typcn-edit btn-icon-append"></i>                          
                             </button>
-                            <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                              Delete
-                              <i class="typcn typcn-delete-outline btn-icon-append"></i>                          
-                            </button>
+                           
                           </div>
                                             </td>
                                         </tr>
