@@ -12,13 +12,13 @@
     <title>Admin - New Fines</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -279,7 +279,109 @@
                    
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Licence ID - B 4425013</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Driver's Details</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    
+                                    
+                                    <tbody>
+                                    <tr>
+                                            <td>Fine Id</td>
+                                            <td>{{ $fineDetails->fine_id }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Violation Type</td>
+                                            <td>{{ $fineDetails->violation_name }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Driver's Name</td>
+                                            <td>{{ $fineDetails->name }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Driver's Licence Id</td>
+                                            <td>{{ $fineDetails->licence_id }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Age</td>
+                                            <td>{{ $fineDetails->age }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile Number</td>
+                                            <td>{{ $fineDetails->mobile_number }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td>{{ $fineDetails->address }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Licence Expire Date</td>
+                                            <td>{{ $fineDetails->license_expire_date }}</td>
+                                            
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Competent to Drive</td>
+                                            <td> {{ $fineDetails->competent_to_drive }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Vehicle Number</td>
+                                            <td> {{ $fineDetails->vehicle_number }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>{{ $fineDetails->date }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Time</td>
+                                            <td>{{ $fineDetails->time }}</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Fine Amount (Rs)</td>
+                                            <td>{{ number_format($fineDetails->fine_amount, 2) }}</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>Payment</td>
+                                            <td>
+                                                @if($fineDetails->paid_status == 1)
+                                                @php
+                                                $paidStatus = "Paid";
+                                                @endphp
+                                                <label class="badge badge-success">{{ $paidStatus }}</label>
+                                                @elseif($fineDetails->paid_status == 2)
+                                                @php
+                                                $paidStatus = "Pending";
+                                                @endphp
+                                                <label class="badge badge-danger">{{ $paidStatus }}</label>
+                                                @else
+                                                @php
+                                                $paidStatus = "Over Due";
+                                                @endphp
+                                                <label class="badge badge-warning">{{ $paidStatus }}</label>
+                                                @endif
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Police Officer's Details</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -288,54 +390,16 @@
                                     
                                     <tbody>
                                         <tr>
-                                            <td>Driver's Name</td>
-                                            <td>W.P.Sunil Perera</td>
+                                            <td>Police Id</td>
+                                            <td>{{ $fineDetails->police_id }}</td>
                                             
                                         </tr>
                                         <tr>
-                                            <td>Age</td>
-                                            <td>35</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>Mobile Number</td>
-                                            <td>077 1786423</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>Address</td>
-                                            <td>No 315/A , Lotus Road,Negombo</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>Licence Expire Date</td>
-                                            <td>2026/10/12</td>
+                                            <td>Police Station</td>
+                                            <td>{{ $fineDetails->police_station }}</td>
                                             
                                         </tr>
                                         
-                                        <tr>
-                                            <td>Competent to Drive</td>
-                                            <td> A1, A, B, G1</td>
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td>Date</td>
-                                            <td>2024/05/27</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>Fine Amount (Rs)</td>
-                                            <td>1000.00</td>
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td>Payment</td>
-                                            <td><label class="badge badge-danger">Pending</label>
-                                        </td>
-                                            
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

@@ -268,16 +268,35 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Police ID</th>
+                                            <th>Fine ID</th>
                                             <th>Police Station</th>
-                                            <th>Driver's Licence Id</th>
                                             <th>Vehicle Number</th>
-                                            <th>Violation</th>
+                                            <th>Violation Type</th>
+                                            <th>Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
+
+                                        @foreach($fineDetails as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->fine_id }}</td>
+                                            <td>{{ $item->police_station}}</td>
+                                            <td>{{ $item->vehicle_number}}</td>
+                                            <td>{{ $item->violation_name}}</td>
+                                            <td>{{ $item->date}}</td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <a href="{{ route('fine', ['id' => $item->id]) }}" title="View "><button class="btn btn-success btn-sm btn-icon-text mr-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> view</button></a>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <!--  <tbody>
                                         <tr>
                                             <td>01</td>
                                             <td>120300</td>
@@ -366,7 +385,7 @@
                                             </td>
                                         </tr>
 
-                                    </tbody>
+                                    </tbody> -->
                                 </table>
                             </div>
                         </div>
