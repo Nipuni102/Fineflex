@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Fine;
 use App\Models\Violationtype;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,11 @@ class DashController extends Controller
     }
 
     public function nfineview(){
-        return view (view:'screens.newfines');
+
+        $fineDetails = Fine::select('fines.id','fines.fine_id', 'fines.police_station', 'fines.vehicle_number', 'fines.date','violationtypes.violation_name')
+            ->join('violationtypes', 'violationtypes.id', '=', 'fines.violation_type_id')
+            ->get();
+        return view ('screens.newfines', compact('fineDetails'));
     }
 
     public function ofineview(){
@@ -44,8 +49,21 @@ class DashController extends Controller
         return view (view:'screens.rejectedrequests');
     }
 
-    public function fineview(){
-        return view (view:'screens.fineview');
+    public function fineview($id){
+
+        $fineDetails = Fine::select('fines.id','fines.fine_id', 'fines.police_station', 'fines.vehicle_number', 'fines.date','fines.time','fines.police_id','violationtypes.violation_name', 
+        'violationtypes.fine_amount','drivers.name','drivers.licence_id','drivers.age', 'drivers.mobile_number','drivers.address','drivers.license_expire_date','drivers.competent_to_drive',
+        'payments.paid_status')
+        ->join('violationtypes', 'violationtypes.id', '=', 'fines.violation_type_id')
+        ->join('drivers', 'drivers.id', '=', 'fines.driver_id')
+        ->join('payments', 'payments.fine_id', '=', 'fines.id')
+        ->where('payments.paid_status', 2)
+        ->where('fines.id', $id)
+        ->first();
+
+        // dd($fineDetails);
+
+        return view ('screens.fineview', compact('fineDetails'));
     }
 
     public function addnewvlnview(){
