@@ -302,10 +302,10 @@
                                             <td>tushara@gmail.com</td>                                          
                                             <td>
                                             <div class="d-flex align-items-center">
-                            <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                            Approve
-                              <i class="typcn typcn-edit btn-icon-append"></i>                          
-                            </button>
+                                            <a href="{{url('/editrqt')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                        View
+                                                        <i class="typcn typcn-edit btn-icon-append"></i>
+                                                    </a>
                             <button type="button" class="btn btn-danger btn-sm btn-icon-text">
                               Reject
                               <i class="typcn typcn-delete-outline btn-icon-append"></i>                          
