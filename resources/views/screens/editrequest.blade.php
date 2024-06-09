@@ -267,6 +267,12 @@
         <h6 class="m-0 font-weight-bold text-primary">Update Signup Request </h6>
     </div>
     <div class="card-body">
+    <div class="card-body">
+        <h5 class="card-title">Police ID : {{ $newrequest->poice_id }}</h5>
+        <p class="card-text">Name : {{ $newrequest->name }}</p>
+        <p class="card-text">Mobile Number : {{ $newrequest->email }}</p>
+        <p class="card-text">Email : {{ $newrequest->mobile_number }}</p>
+  </div>
         <form>
             
             <div class="form-group">
