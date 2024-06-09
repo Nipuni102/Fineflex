@@ -12,11 +12,11 @@
     <title>Admin - Police Stations</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -273,15 +273,18 @@
         <p class="card-text">Mobile Number : {{ $newrequest->email }}</p>
         <p class="card-text">Email : {{ $newrequest->mobile_number }}</p>
   </div>
-        <form>
-            
+        <form action="{{ route('editrqtupdate', ['id' => $newrequest->id]) }}" method="POST">
+            @csrf
+            @method('PUT')
             <div class="form-group">
                 <label for="status">Status</label>
-                <select class="form-control" id="status">
-                    <option value="approved">Approve</option>
-                    <option value="rejected">Reject</option>
+                <select class="form-control" id="status" name="approve_status">
+                    <option value="0">Pending</option>
+                    <option value="1">Approve</option>
+                    <option value="2">Reject</option>
                 </select>
             </div>
+            <input type="hidden" name="request_id" value="{{ $newrequest->id}}">
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

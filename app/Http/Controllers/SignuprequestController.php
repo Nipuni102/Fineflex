@@ -39,7 +39,7 @@ class SignuprequestController extends Controller
     public function show(string $id)
     {
         $newrequest = Registerrequest::find($id);
-        return view('students.editrequest')->with('newrequest', $newrequest);
+        return view('screens.editrequest')->with('newrequest', $newrequest);
     }
 
     /**
@@ -47,7 +47,8 @@ class SignuprequestController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $newrequest = Registerrequest::find($id);
+        return view('screens.editrequest')->with('newrequest', $newrequest);
     }
 
     /**
@@ -55,7 +56,10 @@ class SignuprequestController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $newrequest = Registerrequest::find($id);
+        $input = $request->all();
+        $newrequest->update($input);
+        return redirect('nsr')->with('flash_message', 'request Updated!');
     }
 
     /**

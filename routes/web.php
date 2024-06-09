@@ -47,8 +47,8 @@ Route::post('/vtypesstore', [App\Http\Controllers\ViolationtypeController::class
 Route::delete('/vtypesdelete/{id}', [App\Http\Controllers\ViolationtypeController::class, 'destroy'])->name(name: 'vtypesdelete');
 Route::put('/vtypesupdate/{id}', [App\Http\Controllers\ViolationtypeController::class, 'update'])->name(name: 'vtypesupdate');
 
-Route::get('/editrqt', [App\Http\Controllers\DashController::class, 'editrqtview'])->name(name: 'editrqt');
-
+Route::get('/editrqt/{id}', [App\Http\Controllers\DashController::class, 'editrqtview'])->name(name: 'editrqt');
+Route::put('/editrqtupdate/{id}', [App\Http\Controllers\DashController::class, 'update'])->name(name: 'editrqtupdate');
 
 
 require __DIR__.'/auth.php';

@@ -289,11 +289,40 @@
                                             <th>Name</th>
                                             <th>Mobile Number</th>
                                             <th>Email</th>
+                                            <th>Approve Status</th>
                                             <th>Sign-Up Request</th>
                                         </tr>
                                     </thead>
-                                    
                                     <tbody>
+
+                                        @foreach($newrequest as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->poice_id }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->mobile_number }}</td>
+                                            <td>
+                                                @if($item->approve_status == 0)
+                                                {{ "Pending" }}
+                                                @elseif($item->approve_status == 1)
+                                                {{ "Approved" }}
+                                                @else 
+                                                {{ "Rejected" }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                            <div class="d-flex align-items-center">
+                                                <a href="{{ route('editrqt',$item->id) }}" title="Edit "><button class="btn btn-success btn-sm btn-icon-text mr-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button></a>
+
+
+                                                
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                             <!--       <tbody>
                                         <tr>
                                             <td>00001</td>
                                             <td>120300</td>
@@ -392,7 +421,7 @@
                                         </tr>
                                        
                                       
-                                    </tbody>
+                                    </tbody> -->
                                 </table>
                             </div>
                         </div>
