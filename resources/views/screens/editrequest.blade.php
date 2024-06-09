@@ -257,164 +257,30 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Police Stations</h1>
+                   
 
+                    <!-- Add New Police Station Card -->
 
-                    <div class="card shadow mb-4">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <!-- Update Signup Request Status Card -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Update Signup Request </h6>
+    </div>
+    <div class="card-body">
+        <form>
+            
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status">
+                    <option value="approved">Approve</option>
+                    <option value="rejected">Reject</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>
 
-                            <a href="{{url('/addnewpls')}}" class="h3 mb-0 d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add New</a>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Police Division</th>
-                                            <th>Police Station</th>
-                                            <th>Court</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td>001</td>
-                                            <td>Colombo Central Division</td>
-                                            <td>Maradana</td>
-                                            <td>Maradana</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                        Edit
-                                                        <i class="typcn typcn-edit btn-icon-append"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                                                        Delete
-                                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>002</td>
-                                            <td>Colombo North Division </td>
-                                            <td>Dematagoda</td>
-                                            <td>Dematagoda</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                        Edit
-                                                        <i class="typcn typcn-edit btn-icon-append"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                                                        Delete
-                                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>003</td>
-                                            <td>Colombo South Division </td>
-                                            <td>Borella</td>
-                                            <td>Borella</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                        Edit
-                                                        <i class="typcn typcn-edit btn-icon-append"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                                                        Delete
-                                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>004</td>
-                                            <td>Kelaniya Division</td>
-                                            <td>Wattala</td>
-                                            <td>Wattala</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                        Edit
-                                                        <i class="typcn typcn-edit btn-icon-append"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                                                        Delete
-                                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>005</td>
-                                            <td>Nugegoda Division</td>
-                                            <td>Malabe</td>
-                                            <td>Malabe</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                        Edit
-                                                        <i class="typcn typcn-edit btn-icon-append"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                                                        Delete
-                                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>006</td>
-                                            <td>Mount Lavinia Division</td>
-                                            <td>Dehiwala</td>
-                                            <td>Dehiwala</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                        Edit
-                                                        <i class="typcn typcn-edit btn-icon-append"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                                                        Delete
-                                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>007</td>
-                                            <td>Nugegoda Division</td>
-                                            <td>Kaduwela</td>
-                                            <td>Kaduwela</td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                        Edit
-                                                        <i class="typcn typcn-edit btn-icon-append"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
-                                                        Delete
-                                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-
-                    </div>
 
 
                     <!-- /.container-fluid -->
