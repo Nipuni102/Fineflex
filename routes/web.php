@@ -47,8 +47,8 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/editrqt', [App\Http\Controllers\DashController::class, 'editrqtview'])->name(name: 'editrqt');
-
+Route::get('/editrqt/{id}', [App\Http\Controllers\DashController::class, 'editrqtview'])->name(name: 'editrqt');
+Route::put('/editrqtupdate/{id}', [App\Http\Controllers\DashController::class, 'update'])->name(name: 'editrqtupdate');
 
 
 require __DIR__.'/auth.php';

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Registerrequest extends Model
 {
     use HasFactory;
+    protected $table = 'register_request';
 }
