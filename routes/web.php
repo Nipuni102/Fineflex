@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
+Route::get('/editrqt', [App\Http\Controllers\DashController::class, 'editrqtview'])->name(name: 'editrqt');
 
 
 

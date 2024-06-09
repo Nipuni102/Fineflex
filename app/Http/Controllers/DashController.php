@@ -83,4 +83,8 @@ class DashController extends Controller
         return view (view:'screens.editpolice');
     }
 
+    public function editrqtview(){
+        return view (view:'screens.editrequest');
+    }
+
 }
