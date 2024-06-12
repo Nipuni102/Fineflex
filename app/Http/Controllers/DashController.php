@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Fine;
+use App\Models\Registerrequest;
 use App\Models\Violationtype;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,8 @@ class DashController extends Controller
     }
 
     public function nsrview(){
-        return view (view:'screens.newrequests');
+        $newrequest = Registerrequest::all();
+        return view ('screens.newrequests')->with('newrequest', $newrequest);
     }
 
     public function asrview(){
@@ -83,8 +85,16 @@ class DashController extends Controller
         return view (view:'screens.editpolice');
     }
 
-    public function editrqtview(){
-        return view (view:'screens.editrequest');
+    public function editrqtview($id){
+        $newrequest = Registerrequest::find($id);
+        return view('screens.editrequest')->with('newrequest', $newrequest);
+    }
+
+    public function update(Request $request) {
+        $newrequest = Registerrequest::find($request->request_id);
+        $input = $request->approve_status;
+        $newrequest->update($input);
+        return redirect('nsr')->with('flash_message', 'request Updated!');
     }
 
 }
