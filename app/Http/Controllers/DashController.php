@@ -51,7 +51,7 @@ class DashController extends Controller
 
     public function fineview($id){
 
-        $fineDetails = Fine::select('fines.id','fines.fine_id', 'fines.police_station', 'fines.vehicle_number', 'fines.date','fines.time','fines.police_id','violationtypes.violation_name', 
+        $fineDetails = Fine::select('fines.id','fines.fine_id', 'fines.police_station', 'fines.vehicle_number', 'fines.date','fines.time','fines.police_id','violationtypes.violation_name',
         'violationtypes.fine_amount','drivers.name','drivers.licence_id','drivers.age', 'drivers.mobile_number','drivers.address','drivers.license_expire_date','drivers.competent_to_drive',
         'payments.paid_status')
         ->join('violationtypes', 'violationtypes.id', '=', 'fines.violation_type_id')
