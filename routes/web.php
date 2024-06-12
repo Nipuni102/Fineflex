@@ -42,8 +42,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/vtypesstore', [App\Http\Controllers\ViolationtypeController::class, 'store'])->name(name: 'vtypesstore');
     Route::delete('/vtypesdelete/{id}', [App\Http\Controllers\ViolationtypeController::class, 'destroy'])->name(name: 'vtypesdelete');
     Route::put('/vtypesupdate/{id}', [App\Http\Controllers\ViolationtypeController::class, 'update'])->name(name: 'vtypesupdate');
-
-
 });
 
 
