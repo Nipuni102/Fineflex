@@ -276,10 +276,10 @@
             @method('PUT')
             <div class="form-group">
                 <label for="status">Status</label>
-                <select class="form-control" id="status" name="approve_status">
-                    <option value="0">Pending</option>
-                    <option value="1">Approve</option>
-                    <option value="2">Reject</option>
+                <select class="form-control" id="approve_status" name="approve_status">
+                    <option value="0">1</option>
+                    <option value="1">3</option>
+                    <option value="2">2</option>
                 </select>
             </div>
             <input type="hidden" name="request_id" value="{{ $newrequest->id}}">

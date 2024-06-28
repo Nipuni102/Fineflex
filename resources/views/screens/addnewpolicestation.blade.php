@@ -267,7 +267,7 @@
                             @csrf
                             <div class="form-group">
                                     <label for="police_station_division">Police Station Division</label>
-                                    <select class="form-control" id="police_division">
+                                    <select class="form-control" name="police_division" id="police_division">
                                         <option value="">Select Division</option>
                                         <option value="Colombo Central Division">Colombo Central Division</option>
                                         <option value="Colombo North Division">Colombo North Division</option>
@@ -277,11 +277,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="police_station_name">Police Station Name</label>
-                                    <input type="text" class="form-control" id="police_station" placeholder="Enter police station name">
+                                    <input type="text" class="form-control"  name="police_station" id="police_station" placeholder="Enter police station name">
                                 </div>
                                 <div class="form-group">
                                     <label for="police_station_address">Court</label>
-                                    <textarea class="form-control" id="court" placeholder="Enter court name"></textarea>
+                                    <textarea class="form-control" name="court" id="court" placeholder="Enter court name"></textarea>
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary">Update</button>
