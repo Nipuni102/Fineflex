@@ -68,8 +68,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Fines:</h6>
                         <a class="collapse-item active" href="{{url('/nfine')}}">New Fines</a>
-                        <a class="collapse-item" href="{{url('/ofine')}}">Overdue Fines</a>
-                        <a class="collapse-item" href="{{url('/sfine')}}">Settled Fines</a>
+                       
                     </div>
                 </div>
             </li>
@@ -110,8 +109,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Custom Sign-Up Requests:</h6>
                         <a class="collapse-item" href="{{url('/nsr')}}">New Requests</a>
-                        <a class="collapse-item" href="{{url('/asr')}}">Approved Requests</a>
-                        <a class="collapse-item" href="{{url('/rsr')}}">Rejected Requests</a>
+                        
                         <div class="collapse-divider"></div>
                     </div>
                 </div>

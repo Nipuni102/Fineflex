@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Police Stations</title>
+    <title>Add New Police Stations</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -64,8 +64,6 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Fines:</h6>
                         <a class="collapse-item active" href="{{url('/nfine')}}">New Fines</a>
-                        <a class="collapse-item" href="{{url('/ofine')}}">Overdue Fines</a>
-                        <a class="collapse-item" href="{{url('/sfine')}}">Settled Fines</a>
                     </div>
                 </div>
             </li>
@@ -103,8 +101,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom SignUp Requests:</h6>
                         <a class="collapse-item" href="{{url('/nsr')}}">New Requests</a>
-                        <a class="collapse-item" href="{{url('/asr')}}">Approved Requests</a>
-                        <a class="collapse-item" href="{{url('/rsr')}}">Rejected Requests</a>
+                        
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -266,18 +263,11 @@
                             <h6 class="m-0 font-weight-bold text-primary">Update Police Station</h6>
                         </div>
                         <div class="card-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="police_station_name">Police Station Name</label>
-                                    <input type="text" class="form-control" id="police_station_name" placeholder="Enter police station name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="police_station_address">Court</label>
-                                    <textarea class="form-control" id="court_name" placeholder="Enter court name"></textarea>
-                                </div>
-                                <div class="form-group">
+                            <form action="{{ route('citiesstore') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
                                     <label for="police_station_division">Police Station Division</label>
-                                    <select class="form-control" id="police_station_division">
+                                    <select class="form-control" id="police_division">
                                         <option value="">Select Division</option>
                                         <option value="Colombo Central Division">Colombo Central Division</option>
                                         <option value="Colombo North Division">Colombo North Division</option>
@@ -285,6 +275,15 @@
                                         <!-- Add more options here -->
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="police_station_name">Police Station Name</label>
+                                    <input type="text" class="form-control" id="police_station" placeholder="Enter police station name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="police_station_address">Court</label>
+                                    <textarea class="form-control" id="court" placeholder="Enter court name"></textarea>
+                                </div>
+                                
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </div>
