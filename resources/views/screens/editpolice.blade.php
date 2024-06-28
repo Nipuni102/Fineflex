@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Police Stations</title>
+    <title>Admin - Edit Police Stations</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -64,8 +64,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Fines:</h6>
                         <a class="collapse-item active" href="{{url('/nfine')}}">New Fines</a>
-                        <a class="collapse-item" href="{{url('/ofine')}}">Overdue Fines</a>
-                        <a class="collapse-item" href="{{url('/sfine')}}">Settled Fines</a>
+
                     </div>
                 </div>
             </li>
@@ -103,8 +102,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom SignUp Requests:</h6>
                         <a class="collapse-item" href="{{url('/nsr')}}">New Requests</a>
-                        <a class="collapse-item" href="{{url('/asr')}}">Approved Requests</a>
-                        <a class="collapse-item" href="{{url('/rsr')}}">Rejected Requests</a>
+
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -237,7 +235,7 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <div class="dropdown-divider"></div>
-                                   
+
                                     <a class="dropdown-item" href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -266,18 +264,12 @@
                             <h6 class="m-0 font-weight-bold text-primary">Edit Police Station</h6>
                         </div>
                         <div class="card-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="police_station_name">Police Station Name</label>
-                                    <input type="text" class="form-control" id="police_station_name" placeholder="Enter police station name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="police_station_address">Court</label>
-                                    <textarea class="form-control" id="court_name" placeholder="Enter court name"></textarea>
-                                </div>
+                            <form action="{{ route('citiesupdate' , ['id' => $policestations->id]) }}" method="POST">
+                            @csrf
+                            @method('PUT')
                                 <div class="form-group">
                                     <label for="police_station_division">Police Station Division</label>
-                                    <select class="form-control" id="police_station_division">
+                                    <select class="form-control" id="police_division">
                                         <option value="">Select Division</option>
                                         <option value="Colombo Central Division">Colombo Central Division</option>
                                         <option value="Colombo North Division">Colombo North Division</option>
@@ -285,6 +277,15 @@
                                         <!-- Add more options here -->
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="police_station_name">Police Station Name</label>
+                                    <input type="text" class="form-control" id="police_station" placeholder="Enter police station name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="police_station_address">Court</label>
+                                    <textarea class="form-control" id="court" placeholder="Enter court name"></textarea>
+                                </div>
+
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </div>

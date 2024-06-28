@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Fine;
+use App\Models\Policestation;
 use App\Models\Registerrequest;
 use App\Models\Violationtype;
 use Illuminate\Http\Request;
@@ -22,13 +23,9 @@ class DashController extends Controller
         return view ('screens.newfines', compact('fineDetails'));
     }
 
-    public function ofineview(){
-        return view (view:'screens.overduefines');
-    }
+   
 
-    public function sfineview(){
-        return view (view:'screens.settledfines');
-    }
+    
 
     public function vtypesview(){
         return view (view:'screens.violationtypes');
@@ -43,13 +40,8 @@ class DashController extends Controller
         return view ('screens.newrequests')->with('newrequest', $newrequest);
     }
 
-    public function asrview(){
-        return view (view:'screens.approvedrequests');
-    }
+   
 
-    public function rsrview(){
-        return view (view:'screens.rejectedrequests');
-    }
 
     public function fineview($id){
 
@@ -81,8 +73,9 @@ class DashController extends Controller
         return view (view:'screens.addnewpolicestation');
     }
 
-    public function editplsview(){
-        return view (view:'screens.editpolice');
+    public function editplsview($id){
+       $policestations = Policestation::findOrFail($id);
+       return view('screens.editpolice', compact('policestations'));
     }
 
     public function editrqtview($id){

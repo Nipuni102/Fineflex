@@ -64,8 +64,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Fines:</h6>
                         <a class="collapse-item active" href="{{url('/nfine')}}">New Fines</a>
-                        <a class="collapse-item" href="{{url('/ofine')}}">Overdue Fines</a>
-                        <a class="collapse-item" href="{{url('/sfine')}}">Settled Fines</a>
+
                     </div>
                 </div>
             </li>
@@ -103,8 +102,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom SignUp Requests:</h6>
                         <a class="collapse-item" href="{{url('/nsr')}}">New Requests</a>
-                        <a class="collapse-item" href="{{url('/asr')}}">Approved Requests</a>
-                        <a class="collapse-item" href="{{url('/rsr')}}">Rejected Requests</a>
+
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -237,7 +235,7 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <div class="dropdown-divider"></div>
-                                   
+
                                     <a class="dropdown-item" href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -279,6 +277,31 @@
                                     </thead>
 
                                     <tbody>
+
+                                        @foreach($policestations as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->police_division }}</td>
+                                            <td>{{ $item->police_station }}</td>
+                                            <td>{{ $item->court }}</td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <a href="{{ route('editpls', $item->id) }}" title="Edit "><button class="btn btn-success btn-sm btn-icon-text mr-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+
+
+                                                    <form action="{{ route('citiesdelete', $item->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm btn-icon-text">Delete </button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+
+                                    <!--  <tbody>
                                         <tr>
                                             <td>001</td>
                                             <td>Colombo Central Division</td>
@@ -304,7 +327,7 @@
                                             <td>Dematagoda</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
                                                         Edit
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </a>
@@ -322,7 +345,7 @@
                                             <td>Borella</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
                                                         Edit
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </a>
@@ -340,7 +363,7 @@
                                             <td>Wattala</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
                                                         Edit
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </a>
@@ -359,7 +382,7 @@
                                             <td>Malabe</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
                                                         Edit
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </a>
@@ -378,7 +401,7 @@
                                             <td>Dehiwala</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
                                                         Edit
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </a>
@@ -397,7 +420,7 @@
                                             <td>Kaduwela</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <a href="{{url('/editpls')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
                                                         Edit
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </a>
@@ -408,7 +431,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                    </tbody>
+                                    </tbody> -->
                                 </table>
                             </div>
                         </div>

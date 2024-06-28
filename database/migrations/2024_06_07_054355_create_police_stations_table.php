@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('police_stations', function (Blueprint $table) {
             $table->id();
-            $table->string('police_division');
+            $table->string('police_division')->default('');
             $table->string('police_station');
             $table->string('court');
             $table->timestamps();
