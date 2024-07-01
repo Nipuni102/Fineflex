@@ -277,9 +277,9 @@
             <div class="form-group">
                 <label for="status">Status</label>
                 <select class="form-control" id="approve_status" name="approve_status">
-                    <option value="0">1</option>
-                    <option value="1">3</option>
-                    <option value="2">2</option>
+                    <option value="0" {{$newrequest->approve_status == 0 ? 'selected' : ''}}>Pending</option>
+                    <option value="1" {{$newrequest->approve_status == 1 ? 'selected' : ''}}>Approved</option>
+                    <option value="2" {{$newrequest->approve_status == 2 ? 'selected' : ''}}>Reject</option>
                 </select>
             </div>
             <input type="hidden" name="request_id" value="{{ $newrequest->id}}">
