@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - Police Stations</title>
+    <title>Admin - Edit Requests</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -64,8 +64,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Fines:</h6>
                         <a class="collapse-item active" href="{{url('/nfine')}}">New Fines</a>
-                        <a class="collapse-item" href="{{url('/ofine')}}">Overdue Fines</a>
-                        <a class="collapse-item" href="{{url('/sfine')}}">Settled Fines</a>
+                        
                     </div>
                 </div>
             </li>
@@ -103,8 +102,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom SignUp Requests:</h6>
                         <a class="collapse-item" href="{{url('/nsr')}}">New Requests</a>
-                        <a class="collapse-item" href="{{url('/asr')}}">Approved Requests</a>
-                        <a class="collapse-item" href="{{url('/rsr')}}">Rejected Requests</a>
+                        
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -278,10 +276,10 @@
             @method('PUT')
             <div class="form-group">
                 <label for="status">Status</label>
-                <select class="form-control" id="status" name="approve_status">
-                    <option value="0">Pending</option>
-                    <option value="1">Approve</option>
-                    <option value="2">Reject</option>
+                <select class="form-control" id="approve_status" name="approve_status">
+                    <option value="0">1</option>
+                    <option value="1">3</option>
+                    <option value="2">2</option>
                 </select>
             </div>
             <input type="hidden" name="request_id" value="{{ $newrequest->id}}">
