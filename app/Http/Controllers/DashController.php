@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Fine;
+use App\Models\Payment;
 use App\Models\Policestation;
 use App\Models\Registerrequest;
 use App\Models\Violationtype;
@@ -12,7 +13,13 @@ use Illuminate\Http\Request;
 class DashController extends Controller
 {
     public function dashView(){
-        return view (view:'screens.dashboardnew');
+
+        $pendingFinecount = Payment::where('paid_status', 2)->count();
+        $pendingFineAmount = Payment::where('paid_status', 2)->sum('fine_amount');
+        $paidFinecount = Payment::where('paid_status', 1)->count();
+        $paidFineAmount = Payment::where('paid_status', 1)->sum('fine_amount');
+
+        return view ('screens.dashboardnew', compact('pendingFinecount','pendingFineAmount','paidFinecount','paidFineAmount'));
     }
 
     public function nfineview(){
@@ -45,6 +52,7 @@ class DashController extends Controller
 
     public function fineview($id){
 
+
         $fineDetails = Fine::select('fines.id','fines.fine_id', 'fines.police_station', 'fines.vehicle_number', 'fines.date','fines.time','fines.police_id','violationtypes.violation_name',
         'violationtypes.fine_amount','drivers.name','drivers.licence_id','drivers.age', 'drivers.mobile_number','drivers.address','drivers.license_expire_date','drivers.competent_to_drive',
         'payments.paid_status')
@@ -54,6 +62,7 @@ class DashController extends Controller
         ->where('payments.paid_status', 2)
         ->where('fines.id', $id)
         ->first();
+
 
         // dd($fineDetails);
 
@@ -85,8 +94,8 @@ class DashController extends Controller
 
     public function update(Request $request) {
         $newrequest = Registerrequest::find($request->request_id);
-        $input = $request->approve_status;
-        $newrequest->update($input);
+        $newrequest->approve_status = $request->approve_status;
+        $newrequest->update();
         return redirect('nsr')->with('flash_message', 'request Updated!');
     }
 
