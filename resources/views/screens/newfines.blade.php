@@ -244,6 +244,7 @@
                                         </tr>
                                         @endforeach
                                     </tbody>
+                                    </table>
                                     <!--  <tbody>
                                         <tr>
                                             <td>01</td>
@@ -334,7 +335,7 @@
                                         </tr>
 
                                     </tbody> -->
-                                </table>
+                                
                             </div>
                         </div>
 

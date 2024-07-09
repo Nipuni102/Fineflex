@@ -99,4 +99,10 @@ class DashController extends Controller
         return redirect('nsr')->with('flash_message', 'request Updated!');
     }
 
+    public function search(){
+        $search_text = $_GET('query');
+        $fineDetails = Fine::where('fine_id','LIKE','%'.$search_text.'%')->get();
+        return view('screens.search', compact('fineDetails'));
+    }
+
 }

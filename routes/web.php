@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dash', [App\Http\Controllers\DashController::class, 'dashView'])->name(name: 'dash');
     Route::get('/nfine', [App\Http\Controllers\DashController::class, 'nfineView'])->name(name: 'nfine');
    
-
+    Route::get('/search','DashController@search');
     // Route::get('/vtypess', [App\Http\Controllers\DashController::class, 'vtypesView'])->name(name: 'vtypes');
    // Route::get('/cities', [App\Http\Controllers\DashController::class, 'citiesView'])->name(name: 'cities');
 
