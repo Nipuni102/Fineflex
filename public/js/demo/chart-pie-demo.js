@@ -9,7 +9,7 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["Paid", "Pending"],
     datasets: [{
-      data: [15,  5],
+      data: [ 1, 1 ],
       backgroundColor: ['#4e73df',  '#36b9cc'],
       hoverBackgroundColor: ['#2e59d9',  '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -30,6 +30,6 @@ var myPieChart = new Chart(ctx, {
     legend: {
       display: false
     },
-    cutoutPercentage: 80,
+    cutoutPercentage: 70,
   },
 });

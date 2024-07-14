@@ -28,7 +28,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 background">
             <div class="logo">
                 <a href="/">
-                    <img src="http://127.0.0.1:8000/Fineflex_new/Fineflex/public/img/logo.png">
+                    <img src="img/logo.png">
                 </a>
             </div>
 
