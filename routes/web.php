@@ -49,6 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/editrqt/{id}', [App\Http\Controllers\DashController::class, 'editrqtview'])->name(name: 'editrqt');
     Route::put('/editrqtupdate/{id}', [App\Http\Controllers\DashController::class, 'update'])->name(name: 'editrqtupdate');
 
+    Route::get('/pay', [App\Http\Controllers\DashController::class, 'payview'])->name(name: 'pay');
+
 });
 
 
