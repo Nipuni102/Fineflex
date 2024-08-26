@@ -31,7 +31,9 @@ class DashController extends Controller
     }
 
    
-
+    public function payview(){
+        return view (view:'screens.payment');
+    }
     
 
     public function vtypesview(){
