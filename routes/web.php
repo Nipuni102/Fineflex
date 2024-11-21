@@ -7,6 +7,7 @@ use App\Http\Controllers\ViolationtypeController;
 use App\Models\Policestation;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -52,9 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/pay', [App\Http\Controllers\DashController::class, 'payview'])->name(name: 'pay');
 
 });
-
-
-
 
 
 require __DIR__.'/auth.php';
