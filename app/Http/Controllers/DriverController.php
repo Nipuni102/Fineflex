@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Driver;
+use App\Models\Fine;
 
 class DriverController extends Controller
 {
@@ -40,5 +41,32 @@ class DriverController extends Controller
             'status' => 'error',
             'message' => 'Driver not found.',
         ], 404);
+    }
+
+    public function getDriverFines(Request $request)
+    {
+        // Always respond with JSON, even for validation errors
+        $request->headers->set('Accept', 'application/json');
+
+        // Validate the request
+        $request->validate([
+            'driver_id' => 'required|string|exists:fines,driver_id',
+        ]);
+
+        // Retrieve fines for the given driver_id
+        $fines = Fine::where('driver_id', $request->driver_id)->get();
+
+        if ($fines->isEmpty()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No fines found for this driver.',
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Fines retrieved successfully.',
+            'data' => $fines,
+        ], 200);
     }
 }
