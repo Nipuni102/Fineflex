@@ -13,3 +13,4 @@ Route::post('/validate-police-officer', [PoliceOfficerController::class, 'valida
 Route::post('/signup', [PoliceOfficerController::class, 'signUp']);
 
 Route::post('/driver/details', [DriverController::class, 'getDriverDetails']);
+Route::post('/driver/fines', [DriverController::class, 'getDriverFines']);
