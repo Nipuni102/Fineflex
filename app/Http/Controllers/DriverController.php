@@ -10,15 +10,20 @@ class DriverController extends Controller
 {
     public function getDriverDetails(Request $request)
     {
+        // Always respond with JSON, even for validation errors
+        $request->headers->set('Accept', 'application/json');
+    
+        // Validate the request
         $request->validate([
             'licence_number' => 'required|string|exists:drivers,licence_id',
         ]);
-
+    
         $driver = Driver::where('licence_id', $request->licence_number)->first();
-
+    
         if ($driver) {
             return response()->json([
                 'status' => 'success',
+                'message' => 'Driver details retrieved successfully.',
                 'data' => [
                     'name' => $driver->name,
                     'age' => $driver->age,
@@ -29,8 +34,11 @@ class DriverController extends Controller
                     'email' => $driver->email,
                 ],
             ], 200);
-        } else {
-            return response()->json(['status' => 'error', 'message' => 'Driver not found.'], 404);
         }
+    
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Driver not found.',
+        ], 404);
     }
 }
