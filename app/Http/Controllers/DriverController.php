@@ -26,6 +26,7 @@ class DriverController extends Controller
                 'status' => 'success',
                 'message' => 'Driver details retrieved successfully.',
                 'data' => [
+                    'id'=>$driver->id,
                     'name' => $driver->name,
                     'age' => $driver->age,
                     'address' => $driver->address,
@@ -50,7 +51,7 @@ class DriverController extends Controller
 
         // Validate the request
         $request->validate([
-            'driver_id' => 'required|string|exists:fines,driver_id',
+            'driver_id' => 'required|int|exists:fines,driver_id',
         ]);
 
         // Retrieve fines for the given driver_id
