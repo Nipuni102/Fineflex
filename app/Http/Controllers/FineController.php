@@ -43,4 +43,36 @@ class FineController extends Controller
             'data' => $fine,
         ], 201);
     }
+
+    public function getFinesByDateAndOfficer(Request $request)
+    {
+        // Always respond with JSON
+        $request->headers->set('Accept', 'application/json');
+
+        // Validate the request
+        $request->validate([
+            'police_id' => 'required|string|exists:fines,police_id',
+            'start_date' => 'required|date|before_or_equal:end_date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+        ]);
+
+        // Fetch fines based on filters
+        $fines = Fine::where('police_id', $request->police_id)
+            ->whereBetween('date', [$request->start_date, $request->end_date])
+            ->get();
+
+        // Check if fines exist
+        if ($fines->isEmpty()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No fines found for the given filters.',
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Fines retrieved successfully.',
+            'data' => $fines,
+        ], 200);
+    }
 }
