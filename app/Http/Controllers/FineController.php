@@ -17,8 +17,8 @@ class FineController extends Controller
         // Validate the request
         $request->validate([
             'fine_id' => 'required|string|unique:fines,fine_id',
-            'police_id' => 'required|string',
-            'driver_id' => 'required|string',
+            'police_id' => 'required|int',
+            'driver_id' => 'required|int',
             'vehicle_number' => 'required|string',
             'violation_type_id' => 'required|string',
             'police_station' => 'required|string',
