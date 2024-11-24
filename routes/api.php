@@ -16,4 +16,5 @@ Route::post('/signup', [PoliceOfficerController::class, 'signUp']);
 Route::post('/driver/details', [DriverController::class, 'getDriverDetails']);
 Route::post('/driver/fines', [DriverController::class, 'getDriverFines']);
 Route::post('/fine/save', [FineController::class, 'saveFine']);
+Route::post('/fines/filter', [FineController::class, 'getFinesByDateAndOfficer']);
 
