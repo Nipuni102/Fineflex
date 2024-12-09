@@ -51,7 +51,7 @@ class FineController extends Controller
 
     // Validate the request
     $request->validate([
-        'police_id' => 'required|string|exists:fines,police_id',
+        'police_id' => 'required|int|exists:fines,police_id',
         'start_date' => 'required|date|before_or_equal:end_date',
         'end_date' => 'required|date|after_or_equal:start_date',
     ]);
