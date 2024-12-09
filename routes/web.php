@@ -55,4 +55,19 @@ Route::middleware('auth')->group(function () {
 });
 
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CustomMail;
+
+Route::get('/test-email', function () {
+    $details = [
+        'title' => 'Test Email',
+        'body' => 'This is a test email sent using a GET method in web.php.',
+    ];
+
+    Mail::to('lahirusashika@gmail.com')->send(new CustomMail($details));
+
+    return 'Test email sent successfully!';
+});
+
+
 require __DIR__.'/auth.php';
