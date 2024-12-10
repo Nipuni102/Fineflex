@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <style>
+       <!-- Scripts -->  <style> 
             .background {
                 background-color: #B0EBEF;
             }
