@@ -36,7 +36,7 @@
                 <div class="mx-3 sidebar-brand-text">Admin </div>
             </a>
 
-            <!-- Divider -->
+            <!-- Divide by line -->
             <hr class="my-0 sidebar-divider">
 
             <!-- Nav Item - Dashboard -->
@@ -46,7 +46,7 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <!-- Divider -->
+            <!-- Divide by line -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -110,7 +110,7 @@
 
 
 
-            <!-- Divider -->
+            <!-- Divide by line -->
             <hr class="sidebar-divider d-none d-md-block">
 
 
@@ -203,7 +203,7 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
+                <!-- Begin Page Content in this page -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
@@ -411,7 +411,7 @@
             <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Page Wrapper in this page -->
 
         <!-- Scroll to Top Button-->
         <a class="rounded scroll-to-top" href="#page-top">
