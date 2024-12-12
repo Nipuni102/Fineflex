@@ -411,7 +411,7 @@
             <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Page Wrapper in this page -->
+        <!-- End of Page Wrapper in this -->
 
         <!-- Scroll to Top Button-->
         <a class="rounded scroll-to-top" href="#page-top">
