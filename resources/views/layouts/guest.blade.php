@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <style>
+       <!-- Scripts -->  <style> 
             .background {
                 background-image: url("img/fineBack.jpg");
                 background-repeat: no-repeat;
