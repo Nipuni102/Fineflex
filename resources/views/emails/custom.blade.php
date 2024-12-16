@@ -65,8 +65,8 @@
     <div class="email-container">
         <!-- Header -->
         <div class="email-header">
-            <img src="https://via.placeholder.com/120" alt="Logo" />
-            <!-- <h1>{{ $details['title'] }}</h1> -->
+          <!--  <img src="https://via.placeholder.com/120" alt="Logo" />
+             <h1>{{ $details['title'] }}</h1> -->
         </div>
 
         <!-- Content -->
