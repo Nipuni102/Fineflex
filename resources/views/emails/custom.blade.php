@@ -80,7 +80,7 @@
             </ul> -->
             <p>To make the payment, please click the button below:</p>
             <!-- Call-to-action -->
-            <a href="{{ $details['payment_link'] ?? '#' }}" class="cta-button">Pay Your Fine Fee</a>
+            <a href="{{ route('pay') }}" class="cta-button">Pay Your Fine Fee</a>
             <p>If you have any questions or require assistance, feel free to contact us.</p>
         </div>
 
