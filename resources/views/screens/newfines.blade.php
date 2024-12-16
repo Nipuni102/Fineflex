@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- resources/views/screens/newfines.blade.php -->
 <head>
 
     <meta charset="utf-8">
@@ -33,11 +34,11 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i><i class="fa-solid fa-face-sunglasses"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Admin </div>
+                <div class="mx-3 sidebar-brand-text">Admin </div>
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            <hr class="my-0 sidebar-divider">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
@@ -61,7 +62,7 @@
                     <span>Fines</span>
                 </a>
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="py-2 bg-white rounded collapse-inner">
                         <h6 class="collapse-header">Custom Fines:</h6>
                         <a class="collapse-item active" href="{{url('/nfine')}}">New Fines</a>
                         
@@ -76,7 +77,7 @@
                     <span>Master</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="py-2 bg-white rounded collapse-inner">
                         <h6 class="collapse-header">Custom Master:</h6>
                         <a class="collapse-item" href="{{url('/vtypes')}}">Violation Types</a>
                         <a class="collapse-item" href="{{url('/cities')}}">Police Stations</a>
@@ -99,7 +100,7 @@
                     <span>Sign-Up Requests</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="py-2 bg-white rounded collapse-inner">
                         <h6 class="collapse-header">Custom Sign-Up Requests:</h6>
                         <a class="collapse-item" href="{{url('/nsr')}}">New Requests</a>
                         
@@ -124,17 +125,17 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="mb-4 bg-white shadow navbar navbar-expand navbar-light topbar static-top">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <button id="sidebarToggleTop" class="mr-3 btn btn-link d-md-none rounded-circle">
                         <i class="fa fa-bars"></i>
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form class="my-2 mr-auto d-none d-sm-inline-block form-inline ml-md-3 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="border-0 form-control bg-light small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -144,7 +145,7 @@
                     </form>
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="ml-auto navbar-nav">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -152,10 +153,10 @@
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
+                            <div class="p-3 shadow dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="mr-auto form-inline w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <input type="text" class="border-0 form-control bg-light small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -172,13 +173,13 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nipuni</span>
+                                <span class="mr-2 text-gray-600 d-none d-lg-inline small">Nipuni</span>
                                 <img class="img-profile rounded-circle" src="img/profile.png">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="shadow dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="{{url('/profile')}}">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="mr-2 text-gray-400 fas fa-user fa-sm fa-fw"></i>
                                     Profile
                                 </a>
 
@@ -188,7 +189,7 @@
 
                                     <a class="dropdown-item" href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        <i class="mr-2 text-gray-400 fas fa-sign-out-alt fa-sm fa-fw"></i>
                                         Logout
                                     </a>
                                 </form>
@@ -205,10 +206,10 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">New Fines</h1>
+                    <h1 class="mb-4 text-gray-800 h3">New Fines</h1>
 
 
-                    <div class="card shadow mb-4">
+                    <div class="mb-4 shadow card">
 
                         <div class="card-body">
                             <div class="table-responsive">
@@ -237,7 +238,7 @@
 
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <a href="{{ route('fine', ['id' => $item->id]) }}" title="View "><button class="btn btn-success btn-sm btn-icon-text mr-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> view</button></a>
+                                                    <a href="{{ route('fine', ['id' => $item->id]) }}" title="View "><button class="mr-3 btn btn-success btn-sm btn-icon-text"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> view</button></a>
 
                                                 </div>
                                             </td>
@@ -256,7 +257,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center">
 
-                                                    <a href="{{url('/fine')}}" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <a href="{{url('/fine')}}" class="mr-3 btn btn-success btn-sm btn-icon-text">
                                                         View
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </a>
@@ -273,7 +274,7 @@
                                             <td>Contravening speed Limits </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <button type="button" class="mr-3 btn btn-success btn-sm btn-icon-text">
                                                         View
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </button>
@@ -290,7 +291,7 @@
                                             <td>Halting or Parking</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <button type="button" class="mr-3 btn btn-success btn-sm btn-icon-text">
                                                         View
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </button>
@@ -307,7 +308,7 @@
                                             <td>Not wearing protective helmets</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <button type="button" class="mr-3 btn btn-success btn-sm btn-icon-text">
                                                         View
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </button>
@@ -325,7 +326,7 @@
                                             <td>Disobeying Road Rules</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    <button type="button" class="mr-3 btn btn-success btn-sm btn-icon-text">
                                                         View
                                                         <i class="typcn typcn-edit btn-icon-append"></i>
                                                     </button>
@@ -349,9 +350,9 @@
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
-                <footer class="sticky-footer bg-white">
+                <footer class="bg-white sticky-footer">
                     <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
+                        <div class="my-auto text-center copyright">
                             <span>Copyright &copy; 2024.All rights reserved</span>
                         </div>
                     </div>
@@ -365,7 +366,7 @@
         <!-- End of Page Wrapper -->
 
         <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
+        <a class="rounded scroll-to-top" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
 
